@@ -1,44 +1,117 @@
-<p>
-    <i>( Describe task in general )</i>
-</p>
+<style>
+    pre.example {
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        background: #eee;
+        margin-left: 20px;
+        padding: 5px;
+    }
+
+    p.indent {
+        margin-left: 20px;
+    }
+</style>
 
 <p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
+    We are going build ideal robocity, where all buildings will be rectangular and
+    streets are laid along south-north and east-west lines.
+    First we need a representation for building and in this mission we will
+    create class for this.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    Because all building are rectangular and walls are parallels to streets
+    we can define any building by coordinates of North-West and South-East corners
+    and height of the building. These values are described as positive numbers (conventional units).
+    And we need couple operations. Father you can see class description.
+    You should realize this.
 </p>
 
+<p>
+    <em>class</em> <strong>Building</strong><em>(north_west, south_east, height=10)</em>
+</p>
+<p class="indent">
+    Returns a new Building instance with North-West corner at "north_west", South-East corner at
+    "south_east"
+    and the height of the building is "height".
+    "north_west" and "south_east" coordinates should be a tuple or a list of two positive number.
+    "height" is a positive number with default value is 10.
+</p>
 
+<pre class="example">
+>>> Building((10, 10), (11, 11), 2)
+Building from [10, 10] to [11, 11]. Height 2.
+>>> Building((0, 0), (10.5, 2.546))
+Building from [0, 0] to [10.5, 2.546]. Height 10.
+</pre>
+<p>
+    <strong>corners</strong>()
+</p>
+<p>
+    Returns a dictionary with coordinates of the building corners. The dictionary has
+    next keys: "north-west", "north-east", "south-west", "south-east". The values are
+    tuples with two numbers.
+</p>
+<pre class="example">
+>>> Building((1, 2), (3, 4)).corners()
+{"north-west": (1, 2), "north-east": (1, 4), "south-west": (3, 2), "south-east": (3, 4)}
+</pre>
 
-<div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
-    <p>
-        <strong>Example:</strong>
-    </p>
-    <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
-    </pre>
-</div>
+<p>
+    <strong>area</strong>()
+</p>
+<p>
+    Returns the area of the building.
+</p>
+<pre class="example">
+>>> Building((1, 2.5), (4.5, 4)).area()
+5.25
+</pre>
+
+<p>
+    <strong>volume</strong>()
+</p>
+<p>
+    Returns the volume of the building.
+</p>
+<pre class="example">
+>>> Building((1, 2.5), (4.5, 4), 101).volume()
+530.25
+</pre>
+
+<p>
+    <strong>__str__</strong>()<br>
+    <strong>__repr__</strong>()
+</p>
+<p>
+    String representation of the Building. This method is using for "print" or "str" convertation.
+    Returns the string in the next view:<br>
+    "Building from [{N}, {W}] to [{S}, {E}]. Height {H}."<br>
+</p>
+<pre class="example">
+>>> str(Building((1, 2), (3.3, 44)))
+"Building from [1, 2] to [3.3, 44]. Height 10."
+</pre>
+
+<p>
+    In this mission all data will be correct and you don't need to implement a type and values checking.
+</p>
+
+<p>
+    <strong>Input: </strong> Statements and expression on Building class.
+</p>
+
+<p>
+    <strong>Output: </strong> The behaviour as it was described.
+</p>
+
 
 <p class="for_info_only">
-    <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+<strong>How it is used: </strong>
+    Here you will learn how to write a simple class with minimal functionality.
 </p>
 
 <p>
-    <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
+<strong>Precondition:</strong>
+    All data are correct.
 </p>
