@@ -23,4 +23,4 @@ if __name__ == '__main__':
     assert b.area() == 6, "Area"
     assert b.volume() == 60, "Volume"
     assert b2.volume() == 30, "Volume2"
-    assert str(b) == "Building from [1, 2] with size 2 by 3. Height 10.", "String"
+    assert str(b) == "Building at [1, 2]. Size 2 by 3. Height 10.", "String"
