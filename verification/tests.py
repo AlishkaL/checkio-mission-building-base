@@ -1,36 +1,32 @@
-"""
-TESTS is a dict with all you tests.
-Keys for this will be categories' names.
-Each test is dict with
-    "input" -- input data for user function
-    "answer" -- your right answer
-    "explanation" -- not necessary key, it's using for additional info in animation.
+init_code = """
+if not "Building" in USER_GLOBAL:
+    raise NotImplementedError("Where is 'Building'?")
+
+Building = USER_GLOBAL['Building']
 """
 
+run_test = """RET['code_result'] = {}
+"""
+
+def prepare_test(test, answer, middle_code="\n", show_code=None):
+    if show_code is None:
+        show_code = middle_code + test
+    return {"test_code": {"python-3": init_code + middle_code + run_test.format(test),
+                          "python-27": init_code + middle_code + run_test.format(test)},
+            "show": {"python-3": show_code,
+                     "python-27": show_code},
+            "answer": answer}
 
 TESTS = {
-    "Basics": [
-        {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
-        },
-        {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
-        }
+    "1. Init": [
+        prepare_test("", "", "Building((1, 1), (2, 2))"),
+        prepare_test("", "", "Building((1, 1), (2, 2), 10)"),
+        prepare_test("", "", "Building((0.54345, 1.12313), (2./6, 3.3 * 5), 1./2)")
     ],
-    "Extra": [
-        {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
-        },
-        {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
-        }
+    "2. Str": [
+        prepare_test("str(Building((1, 1), (2, 2))",
+                     "Building from [1, 1] to [2, 2]. Height 10.",),
+        prepare_test("str(Building((0.2, 1), (2, 2.2), 3.5)",
+                     "Building from [0.2, 1] to [2, 2.2]. Height 3.5.",),
     ]
 }
