@@ -1,11 +1,26 @@
-def checkio(a, b):
-    """
-        sums two passed arguments
-    """
-    return None
+class Building():
+    def __init__(self, north, west, width_we, width_ns, height=10):
+        raise NotImplementedError
+    
+    def corners(self):
+        raise NotImplementedError
+    
+    def area(self):
+        raise NotImplementedError
+    
+    def volume(self):
+        raise NotImplementedError
+    
+    def __repr__(self):
+        raise NotImplementedError
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
-    assert checkio(3, 2) == 5
-    assert checkio(5, 7) == 12
-    print('Done')
+    b = Building(1, 2, 2, 3)
+    b2 = Building(1, 2, 2, 3, 5)
+    assert b.corners() == {"north-west": (1, 2), "north-east": (1, 5),
+                           "south-west": (3, 2), "south-east": (4, 5)}, "Corners"
+    assert b.area() == 6, "Area"
+    assert b.volume() == 60, "Volume"
+    assert b2.volume() == 30, "Volume2"
+    assert str(b) == "Building from [1, 2] with size 2 by 3. Height 10.", "String"
