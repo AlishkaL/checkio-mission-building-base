@@ -9,11 +9,15 @@ run_test = """
 RET['code_result'] = {}
 """
 
-def prepare_test(test="", answer="", middle_code="\n", show_code=None):
+def prepare_test(test="", answer=0, middle_code="\n", show_code=None):
     if show_code is None:
         show_code = middle_code + test
-    return {"test_code": {"python-3": init_code + middle_code + (run_test.format(test) if test else ""),
-                          "python-27": init_code + middle_code + (run_test.format(test) if test else "")},
+    if not test:
+        return_code = run_test.format(answer)
+    else:
+        return_code = run_test.format(test)
+    return {"test_code": {"python-3": init_code + middle_code + return_code,
+                          "python-27": init_code + middle_code + return_code},
             "show": {"python-3": show_code,
                      "python-27": show_code},
             "answer": answer}
@@ -30,4 +34,5 @@ TESTS = {
         prepare_test("str(Building(0.2, 1, 2, 2.2, 3.5))",
                      "Building at [0.2, 1]. Size 2 by 2.2. Height 3.5.",),
     ]
+
 }

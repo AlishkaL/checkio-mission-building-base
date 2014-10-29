@@ -5,6 +5,7 @@
         background: #eee;
         margin-left: 20px;
         padding: 5px;
+        overflow: auto;
     }
 
     p.indent {
@@ -21,20 +22,22 @@
 
 <p>
     Because all building are rectangular and walls are parallels to streets
-    we can define any building by coordinates of North-West corner as two arguments,
+    we can define any building by coordinates of South-West corner as two arguments,
     size from west to east edge,
     size from north to south wall and height of the building.
     These values are described as numbers (conventional units).
+    <strong>Coordinates are started from South-West.</strong>
+    So north corner has greater coordinates value, than south corner.
     And we need couple operations.
     Father you can see class description.
     You should realize this.
 </p>
 
 <p>
-    <em>class</em> <strong>Building</strong><em>(north, west, width_WE, width_NS, height=10)</em>
+    <em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em>
 </p>
 <p class="indent">
-    Returns a new Building instance with North-West corner at [<em>north</em>, <em>west</em>]
+    Returns a new Building instance with South-West corner at [<em>south</em>, <em>west</em>]
     coordinates, size is <em>width_WE</em> by <em>width_NS</em>
     and the height of the building is <em>height</em>.
     "height" is a positive number with default value is 10.
@@ -57,7 +60,7 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
 </p>
 <pre class="example">
 >>> Building(1, 2, 2, 2).corners()
-{"north-west": (1, 2), "north-east": (1, 4), "south-west": (3, 2), "south-east": (3, 4)}
+{"north-west": (3, 2), "north-east": (3, 4), "south-west": (1, 2), "south-east": (1, 4)}
 </pre>
 <br>
 <p>
@@ -89,7 +92,7 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
 <p class="indent">
     String representation of the Building. This method is using for "print" or "str" conversation.
     Returns the string in the next view:<br>
-    "Building at [{north}, {west}]. Size {width_we}, {width_ns}]. Height {height}."<br>
+    "Building at [{south}, {west}]. Size {width_we} by {width_ns}. Height {height}."<br>
 </p>
 <pre class="example">
 >>> str(Building(0, 0, 10.5, 2.546))

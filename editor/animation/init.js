@@ -42,11 +42,10 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
             //YOUR FUNCTION NAME
             var fname = 'checkio';
 
-            var checkioInput = data.in;
-            var checkioInputStr = fname + '(' + JSON.stringify(checkioInput) + ')';
+            var checkioInput = data.in || "Building(1, 1, 1, 1)";
 
             var failError = function (dError) {
-                $content.find('.call').html(checkioInputStr);
+                $content.find('.call').html(checkioInput);
                 $content.find('.output').html(dError.replace(/\n/g, ","));
 
                 $content.find('.output').addClass('error');
@@ -66,21 +65,21 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210', 'snap.svg_030'],
                 return false;
             }
 
-            $content.find('.call').html(checkioInputStr);
+            $content.find('.call').html(checkioInput);
             $content.find('.output').html('Working...');
 
 
             if (data.ext) {
                 var rightResult = data.ext["answer"];
-                var userResult = data.out;
+                var userResult = data.out["code_result"];
                 var result = data.ext["result"];
                 var result_addon = data.ext["result_addon"];
 
                 //if you need additional info from tests (if exists)
                 var explanation = data.ext["explanation"];
-                $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
+                $content.find('.output').html('&nbsp;Your result:<br>' + JSON.stringify(userResult));
                 if (!result) {
-                    $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
+                    $content.find('.answer').html('Right result:<br>' + JSON.stringify(rightResult));
                     $content.find('.answer').addClass('error');
                     $content.find('.output').addClass('error');
                     $content.find('.call').addClass('error');

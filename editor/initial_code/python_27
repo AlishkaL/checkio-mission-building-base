@@ -1,5 +1,5 @@
 class Building():
-    def __init__(self, north, west, width_we, width_ns, height=10):
+    def __init__(self, south, west, width_we, width_ns, height=10):
         raise NotImplementedError
 
     def corners(self):
@@ -18,8 +18,8 @@ if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
     b = Building(1, 2, 2, 3)
     b2 = Building(1, 2, 2, 3, 5)
-    assert b.corners() == {"north-west": (1, 2), "north-east": (1, 5),
-                           "south-west": (3, 2), "south-east": (4, 5)}, "Corners"
+    assert b.corners() == {"south-west": (1, 2), "south-east": (1, 5),
+                           "north-west": (3, 2), "north-east": (4, 5)}, "Corners"
     assert b.area() == 6, "Area"
     assert b.volume() == 60, "Volume"
     assert b2.volume() == 30, "Volume2"
