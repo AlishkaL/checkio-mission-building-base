@@ -25,7 +25,7 @@
     we can define any building by coordinates of South-West corner as two arguments,
     size from west to east edge,
     size from north to south wall and height of the building.
-    These values are described as numbers (conventional units).
+    These values are described as positive numbers (conventional units).
     <strong>Coordinates are started from South-West.</strong>
     So north corner has greater coordinates value, than south corner.
     And we need couple operations.
@@ -56,11 +56,11 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
 <p class="indent">
     Returns a dictionary with coordinates of the building corners. The dictionary has
     next keys: "north-west", "north-east", "south-west", "south-east". The values are
-    tuples with two numbers.
+    lists or tuples with two numbers.
 </p>
 <pre class="example">
 >>> Building(1, 2, 2, 2).corners()
-{"north-west": (3, 2), "north-east": (3, 4), "south-west": (1, 2), "south-east": (1, 4)}
+{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
 </pre>
 <br>
 <p>
