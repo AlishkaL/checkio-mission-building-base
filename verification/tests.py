@@ -44,7 +44,16 @@ TESTS = {
         prepare_test(test="Building(100.5, 0.5, 24.3, 12.2, 3).corners()",
                      answer={"north-east": [112.7, 24.8], "north-west": [112.7, 0.5],
                              "south-west": [100.5, 0.5], "south-east": [100.5, 24.8]}),
-
+    ],
+    "4. Area, Volume": [
+        prepare_test(test="Building(1, 1, 2, 2, 100).area()",
+                     answer=4),
+        prepare_test(test="Building(100, 100, 135.5, 2000.1).area()",
+                     answer=271013.55),
+        prepare_test(test="Building(1, 1, 2, 2, 100).volume()",
+                     answer=400),
+        prepare_test(test="Building(100, 100, 135.5, 2000.1).volume()",
+                     answer=2710135.5),
     ]
 
 }
