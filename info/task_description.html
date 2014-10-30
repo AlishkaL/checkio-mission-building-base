@@ -14,33 +14,34 @@
 </style>
 
 <p>
-    We are going build ideal robocity, where all buildings will be rectangular and
-    streets are laid along south-north and east-west lines.
-    First we need a representation for building and in this mission we will
-    create class for this.
+    The singularity has happened and we are being made to build the ideal robo-city for our
+    overlords. In this shining robotropolis, all buildings will be rectangular and all streets laid
+    along south-north and east-west lines in a glorious grid. Before we get started, we to create a
+    class to represent the perfect building.
 </p>
 
 <p>
-    Because all building are rectangular and walls are parallels to streets
-    we can define any building by coordinates of South-West corner as two arguments,
-    size from west to east edge,
-    size from north to south wall and height of the building.
-    These values are described as positive numbers (conventional units).
-    <strong>Coordinates are started from South-West.</strong>
-    So north corner has greater coordinates value, than south corner.
-    And we need couple operations.
-    Father you can see class description.
-    You should realize this.
+    Because all the buildings in the city are rectangular and their walls are parallel to the
+    streets, we can define any building using only the coordinates of South-Western corner as two
+    arguments (the length of the west to east walls, and the length of the north to south wall)
+    along with the height of the building. These values are described as positive numbers using
+    conventional units.
+    <strong>The origin point of our coordinate system lies in the South-West</strong>
+    , as a result the northern corner ends up having the greater coordinate value than the southern
+    corner. To complete this mission we need to use a couple operations. See the class description
+    below.
 </p>
 
 <p>
     <em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em>
 </p>
 <p class="indent">
-    Returns a new Building instance with South-West corner at [<em>south</em>, <em>west</em>]
-    coordinates, size is <em>width_WE</em> by <em>width_NS</em>
-    and the height of the building is <em>height</em>.
-    "height" is a positive number with default value is 10.
+    Returns a new Building instance with the South-West corner at [<em>south</em>, <em>west</em>]
+    coordinates,
+    the size is <em>width_WE</em> by <em>width_NS</em> and the height of the building is
+    <em>height</em>.
+    "height" is a positive number with a default value of 10.
+
 </p>
 
 <pre class="example">
@@ -54,9 +55,10 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
     <strong>corners</strong>()
 </p>
 <p class="indent">
-    Returns a dictionary with coordinates of the building corners. The dictionary has
-    next keys: "north-west", "north-east", "south-west", "south-east". The values are
-    lists or tuples with two numbers.
+    Returns a dictionary with the coordinates of the building corners. The dictionary has following
+    keys: "north-west", "north-east", "south-west", "south-east". The values are lists or tuples
+    with two numbers.
+
 </p>
 <pre class="example">
 >>> Building(1, 2, 2, 2).corners()
@@ -90,8 +92,8 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
     <strong>__repr__</strong>()
 </p>
 <p class="indent">
-    String representation of the Building. This method is using for "print" or "str" conversation.
-    Returns the string in the next view:<br>
+    This is a string representation of the Building. This method is used for "print" or "str"
+    conversation. Returns the string in the following view:<br>
     "Building at [{south}, {west}]. Size {width_we} by {width_ns}. Height {height}."<br>
 </p>
 <pre class="example">
@@ -100,24 +102,26 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
 </pre>
 <br>
 <p>
-    In this mission all data will be correct and you don't need to implement a type and values checking.
+    In this mission all data will be correct and you don't need to implement value checking.
 </p>
 
 <p>
-    <strong>Input: </strong> Statements and expression on Building class.
+    <strong>Input: </strong> Statements and expression with the Building class.
 </p>
 
 <p>
-    <strong>Output: </strong> The behaviour as it was described.
+    <strong>Output: </strong> The behaviour as described.
 </p>
 
 
 <p class="for_info_only">
-<strong>How it is used: </strong>
-    Here you will learn how to write a simple class with minimal functionality.
+    <strong>How it is used: </strong>
+    Here you will learn how to write a simple class with minimal functionality
+    to achieve greater glory for Robonia.
+
 </p>
 
 <p>
-<strong>Precondition:</strong>
+    <strong>Precondition:</strong>
     All data are correct.
 </p>
