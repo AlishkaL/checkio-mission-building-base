@@ -46,9 +46,9 @@
 
 <pre class="example">
 >>> Building(10, 10, 1, 2, 2)
-Building at [10, 10]. Size 1 by 2. Height 2.
+Building(10, 10, 1, 2, 2)
 >>> Building(0, 0, 10.5, 2.546)
-Building at [0, 0]. Size 10.5 by 2.546. Height 10.
+Building(0, 0, 10.5, 2.546, 10)
 </pre>
 <br>
 <p>
@@ -88,17 +88,16 @@ Building at [0, 0]. Size 10.5 by 2.546. Height 10.
 </pre>
 <br>
 <p>
-    <strong>__str__</strong>()<br>
     <strong>__repr__</strong>()
 </p>
 <p class="indent">
     This is a string representation of the Building. This method is used for "print" or "str"
     conversation. Returns the string in the following view:<br>
-    "Building at [{south}, {west}]. Size {width_we} by {width_ns}. Height {height}."<br>
+    "Building({south}, {west}, {width_we}, {width_ns}, {height})"<br>
 </p>
 <pre class="example">
 >>> str(Building(0, 0, 10.5, 2.546))
-"Building at [0, 0]. Size 10.5 by 2.546. Height 10."
+"Building(0, 0, 10.5, 2.546, 10)"
 </pre>
 <br>
 <p>

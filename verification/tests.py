@@ -33,9 +33,9 @@ TESTS = {
     ],
     "2. Str": [
         prepare_test(test="str(Building(1, 1, 2, 2))",
-                     answer="Building at [1, 1]. Size 2 by 2. Height 10.", ),
+                     answer="Building(1, 1, 2, 2, 10)", ),
         prepare_test(test="str(Building(0.2, 1, 2, 2.2, 3.5))",
-                     answer="Building at [0.2, 1]. Size 2 by 2.2. Height 3.5.", ),
+                     answer="Building(0.2, 1, 2, 2.2, 3.5)", ),
     ],
     "3. Corners": [
         prepare_test(test="Building(1, 1, 2, 2).corners()",

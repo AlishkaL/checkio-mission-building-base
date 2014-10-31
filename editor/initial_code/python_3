@@ -1,5 +1,5 @@
-class Building():
-    def __init__(self, south, west, width_we, width_ns, height=10):
+class Building(object):
+    def __init__(self, south, west, width_WE, width_NS, height=10):
         raise NotImplementedError
 
     def corners(self):
@@ -27,4 +27,4 @@ if __name__ == '__main__':
     assert b.area() == 6, "Area"
     assert b.volume() == 60, "Volume"
     assert b2.volume() == 30, "Volume2"
-    assert str(b) == "Building at [1, 2]. Size 2 by 3. Height 10.", "String"
+    assert str(b) == "Building(1, 2, 2, 3, 10)", "String"
