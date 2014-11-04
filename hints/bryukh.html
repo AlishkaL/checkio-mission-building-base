@@ -1,10 +1,19 @@
-<body data-author="YOUR_NICK">
+<body data-author="bryukh">
 <div class="question-answer">
     <div class="question">
         I have no idea how to start solving this mission
     </div>
     <div class="answer">
-        First hint.
+        First you'll need to implement the "__init__" method. This method defines how an instance is
+        created.
+        <textarea data-code="python">
+def __init__(self, south, west, width_WE, width_NS, height=10):
+    self.south = south
+    self.west = west
+    self.width_WE = width_WE
+    self.width_NS = width_NS
+    self.height = height</textarea>
+        Either that, or you can store all the coordinates for each corner and the wall positions.
     </div>
 </div>
 <div class="question-answer">
@@ -12,7 +21,12 @@
         I need some help to proceed with the mission
     </div>
     <div class="answer">
-        Second hint.
+        Next you need to implement the "__repr__" method. You can make it with "format".
+
+        <textarea data-code="python">
+def __repr__(self):
+    return "Building({}, {}, {}, {}, {})".format(....)</textarea>
+        I think you can fill values inside "format" brackets.
     </div>
 </div>
 <div class="question-answer">
@@ -20,23 +34,16 @@
         I have gone half way through. Need help!
     </div>
     <div class="answer">
-        You can stop by these hints.
+        The corners can be calculated with the given values which you should have stored using the
+        init method. Just return a string with with the defined keys and calculated values.
     </div>
 </div>
 <div class="question-answer">
     <div class="question">
-        I am stuck. I need a small hint.
+        I've' stuck. I need a small hint.
     </div>
     <div class="answer">
-        Or add more than 5.
-    </div>
-</div>
-<div class="question-answer">
-    <div class="question">
-        I tried all I could. Nothing works. SOS
-    </div>
-    <div class="answer">
-        These are just examples for you.
+        "Area" and "volume"  can be easily calculated using the width and height.
     </div>
 </div>
 
