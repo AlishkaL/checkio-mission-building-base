@@ -1,4 +1,4 @@
-class Building():
+class Building(object):
     def __init__(self, south, west, width_WE, width_NS, height=10):
         raise NotImplementedError
 
