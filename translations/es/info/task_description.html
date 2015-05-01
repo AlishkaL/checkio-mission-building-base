@@ -1,0 +1,122 @@
+<style>
+    pre.example {
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        background: #eee;
+        margin-left: 20px;
+        padding: 5px;
+        overflow: auto;
+    }
+    p.indent {
+        margin-left: 20px;
+    }
+</style>
+
+<p>
+  La singularidad ha ocurrido y nos est&aacute;n haciendo construir un robo-ciudad ideal para nuestros amos.
+  En esta reluciente robotropolis, todos los edificios ser&aacute;n rectangulares y todas las calles se tender&aacute;n
+  sobre l&iacute;neas de sur-norte y de este-oeste, creando una cuadr&iacute;cula gloriosa. Antes de empezar, vamos a
+  crear una clase para representar el edificio perfecto.
+</p>
+
+<p>
+  Debido a que todos los edificios de la ciudad son rectangulares y sus paredes son paralelas a las calles,
+  podemos definir cualquier edificio utilizando s&oacute;lo las coordenadas de la esquina sur-oeste, como dos
+  argumentos (la distancia entre la pared oeste y la pared este; y la distancia entre la pared norte y
+  la pared sur), junto a la altura del edificio. Estos valores se describen como n&uacute;meros positivos utilizando
+  unidades convencionales.
+    <strong>El punto de origen de nuestro sistema de coordenadas se encuentra en el Sur-Oeste.</strong>
+    Como resultado, la esquina norte termina por tener un valor de coordenadas superior a la esquina sur.
+    Para completar esta misi&oacute;n tenemos que utilizar un par de operaciones. Consulta a continuaci&oacute;n
+    la descripci&oacute;n de la clase.
+</p>
+
+<p>
+    <em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em>
+</p>
+<p class="indent">
+    Devuelve una nueva instancia de <em>Building</em> con la esquina sur-oeste en las coordenadas [<em>south</em>, <em>west</em>].
+    El tama&ntilde;o es <em>width_WE</em> por <em>width_NS</em> y la altura del edificio es
+    <em>height</em>. "height" es un n&uacute;mero positivo con un valor predeterminado de 10.
+</p>
+
+<pre class="example">
+>>> Building(10, 10, 1, 2, 2)
+Building(10, 10, 1, 2, 2)
+>>> Building(0, 0, 10.5, 2.546)
+Building(0, 0, 10.5, 2.546, 10)
+</pre>
+<br>
+<p>
+    <strong>corners</strong>()
+</p>
+<p class="indent">
+    Devuelve un diccionario con las coordenadas de las esquinas del edificio.
+    El diccionario tiene las siguientes claves (keys): "north-west", "north-east", "south-west", "south-east".
+    Los valores son listas o tuplas con dos n&uacute;meros.
+</p>
+<pre class="example">
+>>> Building(1, 2, 2, 2).corners()
+{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
+</pre>
+<br>
+<p>
+    <strong>area</strong>()
+</p>
+<p class="indent">
+    Devuelve el &aacute;rea del edificio.
+</p>
+<pre class="example">
+>>> Building(1, 2.5, 4.2, 1.25).area()
+5.25
+</pre>
+<br>
+<p>
+    <strong>volume</strong>()
+</p>
+<p class="indent">
+    Devuelve el volumen del edificio.
+</p>
+<pre class="example">
+>>> Building(1, 2.5, 4.2, 1.25, 101).volume()
+530.25
+</pre>
+<br>
+<p>
+    <strong>__repr__</strong>()
+</p>
+<p class="indent">
+  Esta es una representaci&oacute;n, como una cadena (str) del objeto(Building). Este m&eacute;todo se
+  utiliza para "imprimir" o para la conversi&oacute;n "str". Devuelve una cadena (str) de la
+  siguiente forma:<br>
+    "Building({south}, {west}, {width_we}, {width_ns}, {height})"<br>
+</p>
+<pre class="example">
+>>> str(Building(0, 0, 10.5, 2.546))
+"Building(0, 0, 10.5, 2.546, 10)"
+</pre>
+<br>
+<p>
+  En esta misi&oacute;n todos los datos sean correctos y no es necesario que implementes una comprobaci&oacute;n de valores.
+</p>
+
+<p>
+    <strong>Datos de Entrada: </strong> Las declaraciones y expresiones con la clase <em>Building</em>.
+</p>
+
+<p>
+    <strong>Salida: </strong> El comportamiento descrito.
+</p>
+
+
+<p class="for_info_only">
+    <strong>&iquest;C&oacute;mo se usa?: </strong>
+    Aqu&iacute; aprender&aacute;s c&oacute;mo escribir una clase simple con funcionalidad m&iacute;nima,
+    para alcanzar la m&aacute;xima gloria de Robonia.
+
+</p>
+
+<p>
+    <strong>Condiciones:</strong>
+    Todos los datos son correctos.
+</p>
