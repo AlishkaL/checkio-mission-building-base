@@ -1,0 +1,132 @@
+<style> 
+pre.example { 
+   border: 1px solid #aaa; 
+   border-radius: 3px; 
+   background: #eee; 
+   margin-left: 20px; 
+   padding: 5px; 
+   overflow: auto; 
+} 
+
+p.indent { 
+   margin-left: 20px; 
+} 
+</style> 
+
+
+<p> 
+La singularité est arrivé et nous sommes fait pour construire la ville-robot idéale pour nos suzerains. 
+Dans ce Robotropolis brillant, tous les bâtiments seront rectangulaires et toutes les rues tracées sur les axes sud-nord
+et est-ouest des lignes dans une grille magnifique. Avant de commencer, nous devons créer une classe pour représenter
+le bâtiment parfait.
+</p> 
+
+
+<p> 
+Parce que tous les bâtiments de la ville sont rectangulaires et leurs murs sont parallèles aux rues, nous pouvons définir
+un bâtiment en utilisant uniquement les coordonnées du coin Sud-Ouest ainsi que deux arguments (la longueur du mur d'est
+en ouest, et la longueur du mur du nord au sud) ainsi que la hauteur du bâtiment. Ces valeurs sont décrits comme des
+nombres positifs en utilisant des unités classiques.
+<strong> Le point d'origine de notre système de coordonnées se situe dans le Sud-Ouest </ strong>
+, par conséquent l'angle nord a une valeur de coordonnées supérieure à l'angle sud. Pour accomplir cette mission, nous
+devons utiliser quelques opérations. Voir la description des classes ci-dessous.
+</p> 
+ 
+ 
+<p> 
+<em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em> 
+</p> 
+<p class="indent"> 
+Résulte en une nouvelle instance de building avec les coordonnées du coin sud-ouest à [<em>south</em>, <em>west</em>] , 
+la tailles du bâtiment est <em>width_WE</em> par <em>width_NS</em> et la hauteur du bâtiment est <em>height</em>. 
+"height" est un entier positif avec une valeur par défaut de 10. 
+
+
+</p> 
+ 
+ 
+<pre class="exemple"> 
+>>> Building(10, 10, 1, 2, 2) 
+Building(10, 10, 1, 2, 2) 
+>>> Building(0, 0, 10.5, 2.546) 
+Building(0, 0, 10.5, 2.546, 10) 
+</pre> 
+<br> 
+<p> 
+<strong>corners</strong>() 
+</p> 
+<p class="indent"> 
+Résulte un dictionnaire avec les coordonnées des coins du bâtiment. Le dictionnaire a les mots-clés suivants : 
+"north-west", "north-east", "south-west", "south-east". Les valeurs sont des listes de Tuples avec des 2 nombres. 
+
+
+</p> 
+<pre class="exemple"> 
+>>> Building(1, 2, 2, 2).corners() 
+{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]} 
+</pre> 
+<br> 
+<p> 
+<strong>area</strong>() 
+</p> 
+<p class="indent"> 
+Résulte en la surface du bâtiment. 
+</p> 
+<pre class="exemple"> 
+>>> Building(1, 2.5, 4.2, 1.25).area() 
+5.25 
+</pre> 
+<br> 
+<p> 
+<strong>volume</strong>() 
+</p> 
+<p class="indent"> 
+Résulte le volume du bâtiment. 
+</p> 
+<pre class="exemple"> 
+>>> Building(1, 2.5, 4.2, 1.25, 101).volume() 
+530.25 
+</pre> 
+<br> 
+<p> 
+<strong>__repr__</strong>() 
+</p> 
+<p class="indent"> 
+C'est une représentation en chaine de caractères du bâtiment. Cette méthode est utilisé pour les
+conversions "print" ou "str". La fonction retourne la chaine de caractères dans le format suivant:
+<br> "Building({south}, {west}, {width_we}, {width_ns}, {height})"<br> 
+</p> 
+<pre class="exemple"> 
+>>> str(Building(0, 0, 10.5, 2.546)) 
+"Building(0, 0, 10.5, 2.546, 10)" 
+</pre> 
+<br> 
+<p> 
+Dans cette mission, toutes les données sont correctes et vous n'avez pas à implémenter des contrôles. 
+</p> 
+ 
+ 
+<p> 
+<strong>Entrée: </strong> états et expressions avec la classe "building". 
+</p> 
+ 
+ 
+<p> 
+<strong>Résultat: </strong> Le fonctionnement comme décris. 
+</p> 
+ 
+ 
+ 
+<p class="Pour information seulement"> 
+<strong>Utilisation: </strong> 
+Vous apprendrez ici comment écrire une classe simple avec des fonctionnalités minimum pour achever la grande
+gloire de Robonia.
+
+ 
+</p> 
+ 
+ 
+<p> 
+<strong>Precondition:</strong> 
+Toutes les données sont correctes. 
+</p> 
