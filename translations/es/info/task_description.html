@@ -1,17 +1,3 @@
-<style>
-    pre.example {
-        border: 1px solid #aaa;
-        border-radius: 3px;
-        background: #eee;
-        margin-left: 20px;
-        padding: 5px;
-        overflow: auto;
-    }
-    p.indent {
-        margin-left: 20px;
-    }
-</style>
-
 <p>
   La singularidad ha ocurrido y nos est&aacute;n haciendo construir un robo-ciudad ideal para nuestros amos.
   En esta reluciente robotropolis, todos los edificios ser&aacute;n rectangulares y todas las calles se tender&aacute;n
@@ -34,68 +20,98 @@
 <p>
     <em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em>
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Devuelve una nueva instancia de <em>Building</em> con la esquina sur-oeste en las coordenadas [<em>south</em>, <em>west</em>].
     El tama&ntilde;o es <em>width_WE</em> por <em>width_NS</em> y la altura del edificio es
     <em>height</em>. "height" es un n&uacute;mero positivo con un valor predeterminado de 10.
 </p>
 
-<pre class="example">
->>> Building(10, 10, 1, 2, 2)
+<pre class="brush: python">
 Building(10, 10, 1, 2, 2)
->>> Building(0, 0, 10.5, 2.546)
-Building(0, 0, 10.5, 2.546, 10)
 </pre>
-<br>
+<div class="output">
+    <pre>
+Building(10, 10, 1, 2, 2)
+    </pre>
+</div>
+<pre class="brush: python">
+Building(0, 0, 10.5, 2.546)
+</pre>
+<div class="output">
+    <pre>
+Building(0, 0, 10.5, 2.546, 10)
+    </pre>
+</div>
+
 <p>
     <strong>corners</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Devuelve un diccionario con las coordenadas de las esquinas del edificio.
     El diccionario tiene las siguientes claves (keys): "north-west", "north-east", "south-west", "south-east".
     Los valores son listas o tuplas con dos n&uacute;meros.
 </p>
-<pre class="example">
->>> Building(1, 2, 2, 2).corners()
-{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
+
+<pre class="brush: python">
+Building(1, 2, 2, 2).corners()
 </pre>
-<br>
+<div class="output">
+    <pre>
+{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
+    </pre>
+</div>
+
 <p>
     <strong>area</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Devuelve el &aacute;rea del edificio.
 </p>
-<pre class="example">
->>> Building(1, 2.5, 4.2, 1.25).area()
-5.25
+
+<pre class="brush: python">
+Building(1, 2.5, 4.2, 1.25).area()
 </pre>
-<br>
+<div class="output">
+    <pre>
+5.25
+    </pre>
+</div>
+
 <p>
     <strong>volume</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Devuelve el volumen del edificio.
 </p>
-<pre class="example">
->>> Building(1, 2.5, 4.2, 1.25, 101).volume()
-530.25
+
+<pre class="brush: python">
+Building(1, 2.5, 4.2, 1.25, 101).volume()
 </pre>
-<br>
+<div class="output">
+    <pre>
+530.25
+    </pre>
+</div>
+
 <p>
     <strong>__repr__</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
   Esta es una representaci&oacute;n, como una cadena (str) del objeto(Building). Este m&eacute;todo se
   utiliza para "imprimir" o para la conversi&oacute;n "str". Devuelve una cadena (str) de la
   siguiente forma:<br>
     "Building({south}, {west}, {width_we}, {width_ns}, {height})"<br>
 </p>
-<pre class="example">
->>> str(Building(0, 0, 10.5, 2.546))
-"Building(0, 0, 10.5, 2.546, 10)"
+
+<pre class="brush: python">
+str(Building(0, 0, 10.5, 2.546))
 </pre>
-<br>
+<div class="output">
+    <pre>
+"Building(0, 0, 10.5, 2.546, 10)"
+    </pre>
+</div>
+
 <p>
   En esta misi&oacute;n todos los datos sean correctos y no es necesario que implementes una comprobaci&oacute;n de valores.
 </p>

@@ -1,18 +1,3 @@
-<style>
-    pre.example {
-        border: 1px solid #aaa;
-        border-radius: 3px;
-        background: #eee;
-        margin-left: 20px;
-        padding: 5px;
-        overflow: auto;
-    }
-
-    p.indent {
-        margin-left: 20px;
-    }
-</style>
-
 <p>
     The singularity has happened, and we are being made to build the ideal robo-city for our
     overlords. In this shining robotropolis, all buildings will be rectangular and all streets laid
@@ -35,71 +20,96 @@
 <p>
     <em>class</em> <strong>Building</strong><em>(south, west, width_WE, width_NS, height=10)</em>
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Returns a new Building instance with the South-West corner at [<em>south</em>, <em>west</em>]
     coordinates,
     the size is <em>width_WE</em> by <em>width_NS</em> and the height of the building is
     <em>height</em>.
     "height" is a positive number with a default value of 10.
-
 </p>
 
-<pre class="example">
->>> Building(10, 10, 1, 2, 2)
+<pre class="brush: python">
 Building(10, 10, 1, 2, 2)
->>> Building(0, 0, 10.5, 2.546)
-Building(0, 0, 10.5, 2.546, 10)
 </pre>
-<br>
+<div class="output">
+    <pre>
+Building(10, 10, 1, 2, 2)
+    </pre>
+</div>
+<pre class="brush: python">
+Building(0, 0, 10.5, 2.546)
+</pre>
+<div class="output">
+    <pre>
+Building(0, 0, 10.5, 2.546, 10)
+    </pre>
+</div>
+
 <p>
     <strong>corners</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Returns a dictionary with the coordinates of the building corners. The dictionary has following
     keys: "north-west", "north-east", "south-west", "south-east". The values are lists or tuples
     with two numbers.
-
 </p>
-<pre class="example">
->>> Building(1, 2, 2, 2).corners()
-{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
+
+<pre class="brush: python">
+Building(1, 2, 2, 2).corners()
 </pre>
-<br>
+<div class="output">
+    <pre>
+{"north-west": [3, 2], "north-east": [3, 4], "south-west": [1, 2], "south-east": [1, 4]}
+    </pre>
+</div>
+
 <p>
     <strong>area</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Returns the area of the building.
 </p>
-<pre class="example">
->>> Building(1, 2.5, 4.2, 1.25).area()
-5.25
+<pre class="brush: python">
+Building(1, 2.5, 4.2, 1.25).area()
 </pre>
-<br>
+<div class="output">
+    <pre>
+5.25
+    </pre>
+</div>
+
 <p>
     <strong>volume</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     Returns the volume of the building.
 </p>
-<pre class="example">
->>> Building(1, 2.5, 4.2, 1.25, 101).volume()
-530.25
+<pre class="brush: python">
+Building(1, 2.5, 4.2, 1.25, 101).volume()
 </pre>
-<br>
+<div class="output">
+    <pre>
+530.25
+    </pre>
+</div>
+
 <p>
     <strong>__repr__</strong>()
 </p>
-<p class="indent">
+<p style="margin-left: 20px;">
     This is a string representation of the Building. This method is used for "print" or "str"
     conversion. Returns the string in the following view:<br>
     "Building({south}, {west}, {width_we}, {width_ns}, {height})"<br>
 </p>
-<pre class="example">
->>> str(Building(0, 0, 10.5, 2.546))
-"Building(0, 0, 10.5, 2.546, 10)"
+<pre class="brush: python">
+str(Building(0, 0, 10.5, 2.546))
 </pre>
-<br>
+<div class="output">
+    <pre>
+"Building(0, 0, 10.5, 2.546, 10)"
+    </pre>
+</div>
+
 <p>
     In this mission, all data will be correct and you don't need to implement value checking.
 </p>
@@ -109,7 +119,7 @@ Building(0, 0, 10.5, 2.546, 10)
 </p>
 
 <p>
-    <strong>Output: </strong> The behaviour as described.
+    <strong>Output: </strong> The behavior as described.
 </p>
 
 
